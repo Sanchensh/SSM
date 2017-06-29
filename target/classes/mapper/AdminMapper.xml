@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.AdminMapper">
+	<select id="findAdmin" resultType="com.shop.entity.Admin">
+		select
+		adminID,
+		adminName,
+		password
+		from admin where adminID=#{adminID}
+	</select>
+
+	<update id="updateAdmin">
+		update admin
+		SET
+		adminName =#{adminName},
+		password = #{password}
+		where adminID = #{adminID};
+	</update>
+</mapper>

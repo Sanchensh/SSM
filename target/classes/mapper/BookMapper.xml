@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.BookMapper">
+	<select id="getBooks" resultType="com.shop.entity.Book">
+		SELECT * FROM bookinfo
+	</select>
+	<select id="findBook" resultType="com.shop.entity.Book">
+		SELECT * FROM bookinfo where bookName=#{bookName}
+	</select>
+
+	<!--<insert id="insertBook" parameterType="com.shop.entity.Book">
+		insert into bookinfo (
+		bookID,
+		bookname,
+		shopkeeperID,
+		publisher,
+		bookType,
+		bookPic,
+		bookBref,
+		isSoldType,
+		soldTime
+		)
+		values
+		(
+		#{bookID},
+		#{bookname},
+		#{shopkeeperID},
+		#{publisher},
+		#{bookType},
+		#{bookPic},
+		#{bookBref},
+		#{isSoldType},
+		#{soldTime}
+		);
+	</insert>
+
+	<delete id="deleteBook">
+		delete
+		from
+		bookinfo
+		where bookID = #{bookID};
+	</delete>
+
+	<update id="updateBook">
+		update
+		bookinfo
+		set
+		bookname = #{book.bookname},
+		shopkeeperID = #{shopkeeperID},
+		publisher = #{publisher},
+		bookType = #{bookType},
+		bookPic = #{bookPic},
+		bookBref = #{bookBref},
+		isSoldType = #{isSoldType},
+		soldTime = #{soldTime}
+		where bookID = #{bookID};
+	</update>-->
+</mapper>

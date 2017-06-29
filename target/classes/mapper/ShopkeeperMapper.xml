@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.dao.ShopkeeperMapper">
+	<select id="findShopkeeper">
+		SELECT
+		shopkeeperID,
+		shopkeeperName,
+		password,
+		hasRoot
+		FROM
+		shopkeeper
+		where shopkeeperName=#{shopkeeperName}
+	</select>
+
+	<insert id="insertShopkeeper">
+		INSERT INTO shopkeeper (
+		shopkeeperID,
+		shopkeeperName,
+		password,
+		hasRoot
+		)
+		VALUES
+		(
+		#{shopkeeper.shopkeeperID},
+		#{shopkeeper.shopkeeperName},
+		#{shopkeeper.password},
+		#{shopkeeper.hasRoot}
+		);
+	</insert>
+
+	<delete id="deleteShopkeeper">
+		delete
+		from
+		shopping.shopkeeper
+		where shopkeeperID = #{shopkeeperID};
+	</delete>
+
+	<update id="updateShopkeeper">
+		UPDATE
+		shopping.shopkeeper
+		SET
+		shopkeeperName = #{shopkeeper.shopkeeperName},
+		password = #{shopkeeper.password},
+		hasRoot = #{shopkeeper.hasRoot}
+		WHERE shopkeeperID = #{shopkeeper.shopkeeperID};
+	</update>
+</mapper>
